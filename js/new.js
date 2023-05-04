@@ -82,11 +82,6 @@ sendButton.onclick = function() {
   addComment();
 };
 
-
-
-
-
-
 // функция для лайков комментариев
 function likeComment(comment) {
   // получаем количество лайков для комментария
@@ -98,7 +93,7 @@ function likeComment(comment) {
 }
 
 // получаем все элементы "like-span" на странице
-var likeSpans = document.querySelectorAll(".like-span");
+var likeSpans = document.querySelectorAll(".shadow, .like-span, .like-span1, .like-span2, .like-span3, .like-span4, .like-span5, .like-span6, .like-span7, .like-span8, .like-span9, .like-span10, .like-span11, .like-span12, .like-span13, .like-span14, .like-span15");
 
 // назначаем обработчик событий для каждого элемента "like-span"
 likeSpans.forEach(function(likeSpan) {
@@ -108,6 +103,14 @@ likeSpans.forEach(function(likeSpan) {
   };
 });
 
+// Смещение вьюпорта к последнему добавленному комментарию
+var commentSubmit = document.getElementById('comment-submit');
+var commentsList = document.getElementById('comments-list');
+
+commentSubmit.addEventListener('click', function() {
+var lastComment = commentsList.lastElementChild;
+lastComment.scrollIntoView({ behavior: 'smooth' });
+});
 
 // квиз js
 var currentSlide = 0;
@@ -122,34 +125,35 @@ function showSlide(n) {
   currentSlide = n;
 
   if (currentSlide === 0) {
-    nextButton.style.display = 'block';
+    nextButton.style.display = 'none';
     prevButton.style.display = 'none';
     otherButton.style.display = 'none';
   } else if (currentSlide === slides.length - 1) {
     nextButton.style.display = 'none';
     prevButton.style.display = 'none';
-    otherButton.style.display = 'block';
+    otherButton.style.display = 'none';
   } else {
-    nextButton.style.display = 'block';
-    prevButton.style.display = 'block';
+    nextButton.style.display = 'none';
+    prevButton.style.display = 'none';
     otherButton.style.display = 'none';
   }
 }
 
-prevButton.addEventListener('click', function() {
-  if (currentSlide === 0) {
-    showSlide(slides.length - 1);
-  } else {
-    showSlide(currentSlide - 1);
-  }
-});
 
-nextButton.addEventListener('click', function() {
-  if (currentSlide === slides.length - 1) {
-    window.location.href = 'http://example.com'; // заменить на нужный URL
-  } else {
+
+// добавляем обработчик события click для всех ответов
+var answers = document.querySelectorAll('.li-a');
+answers.forEach(function(answer) {
+  answer.addEventListener('click', function() {
+    // добавляем класс selected к выбранному ответу
+    answers.forEach(function(a) {
+      a.classList.remove('selected');
+    });
+    answer.classList.add('selected');
+
+    // переключаем на следующий слайд
     showSlide(currentSlide + 1);
-  }
+  });
 });
 
 showSlide(currentSlide);
