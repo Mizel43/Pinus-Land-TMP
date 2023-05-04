@@ -177,7 +177,7 @@ function showNotification() {
   });
   setTimeout(function() {
     notification.style.display = "block";
-  }, 5000000);
+  }, 20000);
 }
 
-setInterval(showNotification, 5000000);
+setInterval(showNotification, 20000);
