@@ -157,3 +157,27 @@ answers.forEach(function(answer) {
 });
 
 showSlide(currentSlide);
+
+var images = [
+  "./img/otz1.png",
+  "./img/otz2.png",
+  "./img/otz3.png",
+  "./img/otz4.png",
+  "./img/otz5.png"
+];
+
+function showNotification() {
+  var notification = document.getElementById("notification");
+  var image = document.getElementById("notification-image");
+  var randomIndex = Math.floor(Math.random() * images.length);
+  image.src = images[randomIndex];
+  notification.style.display = "block";
+  image.addEventListener("click", function() {
+    notification.style.display = "none";
+  });
+  setTimeout(function() {
+    notification.style.display = "block";
+  }, 5000000);
+}
+
+setInterval(showNotification, 5000000);
