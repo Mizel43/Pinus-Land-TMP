@@ -46,7 +46,7 @@ function addComment() {
   var likeButton = document.createElement("span");
   likeButton.classList.add("like-span");
   likeButton.textContent = "Нравится";
-  likeButton.onclick = function() {
+  likeButton.onclick = function () {
     likeComment(this.closest(".comment-item"));
   };
   likeBlock.appendChild(likeButton);
@@ -105,16 +105,16 @@ function likeComment(comment) {
 var likeSpans = document.querySelectorAll(".shadow, .like-span, .like-span1, .like-span2, .like-span3, .like-span4, .like-span5, .like-span6, .like-span7, .like-span8, .like-span9, .like-span10, .like-span11, .like-span12, .like-span13, .like-span14, .like-span15");
 
 // назначаем обработчик событий для каждого элемента "like-span"
-likeSpans.forEach(function(likeSpan) {
-  likeSpan.onclick = function() {
+likeSpans.forEach(function (likeSpan) {
+  likeSpan.onclick = function () {
     var comment = this.closest(".comment-item");
     likeComment(comment);
   };
 });
 
 // создаем новый экземпляр MutationObserver
-var observer = new MutationObserver(function(mutations) {
-  mutations.forEach(function(mutation) {
+var observer = new MutationObserver(function (mutations) {
+  mutations.forEach(function (mutation) {
     // проверяем, появился ли элемент с классом move-i
     var moveElement = mutation.target.querySelector('.move-i');
     if (moveElement) {
@@ -132,16 +132,19 @@ observer.observe(document.body, config);
 
 // назначаем обработчик событий для кнопки "Send"
 var sendButton = document.querySelector("#comment-form button[type='submit']");
-sendButton.onclick = function() {
+sendButton.onclick = function () {
   var commentInput = document.getElementById("comment-input").value;
   if (commentInput.trim() == "") {
     var modal = document.getElementById("comment-modal");
     modal.style.display = "block";
-    window.onclick = function(event) {
+    document.body.style.overflow = "hidden";
+    window.onclick = function (event) {
       if (event.target == modal) {
         modal.style.display = "none";
+        document.body.style.overflow = "";
       } else if (event.target == clobtn) {
         modal.style.display = "none";
+        document.body.style.overflow = "";
       }
     }
   } else {
@@ -163,38 +166,47 @@ function showSlide(n) {
   currentSlide = n;
 
   if (currentSlide === 0) {
-    nextButton.style.display = 'none';
+    nextButton.style.display = 'block';
     prevButton.style.display = 'none';
     otherButton.style.display = 'none';
   } else if (currentSlide === slides.length - 1) {
     nextButton.style.display = 'none';
     prevButton.style.display = 'none';
-    otherButton.style.display = 'none';
+    otherButton.style.display = 'block';
   } else {
-    nextButton.style.display = 'none';
-    prevButton.style.display = 'none';
+    nextButton.style.display = 'block';
+    prevButton.style.display = 'block';
     otherButton.style.display = 'none';
   }
 }
 
-
-
 // добавляем обработчик события click для всех ответов
-var answers = document.querySelectorAll('.li-a');
-answers.forEach(function(answer) {
-  answer.addEventListener('click', function() {
+var answers = document.querySelectorAll('.slide-item-box li');
+answers.forEach(function (answer) {
+  answer.addEventListener('click', function () {
     // добавляем класс selected к выбранному ответу
-    answers.forEach(function(a) {
+    answers.forEach(function (a) {
       a.classList.remove('selected');
     });
     answer.classList.add('selected');
-
-    // переключаем на следующий слайд
-    showSlide(currentSlide + 1);
   });
 });
 
+// изменяем обработчик события click для кнопки "Далее"
+nextButton.addEventListener('click', function () {
+  // проверяем, выбран ли ответ на текущем слайде
+  var selectedAnswer = slides[currentSlide].querySelector('.selected');
+  if (selectedAnswer) {
+    // переключаем на следующий слайд
+    showSlide(currentSlide + 1);
+  }
+});
+
 showSlide(currentSlide);
+
+prevButton.addEventListener('click', function () {
+  showSlide(currentSlide - 1);
+});
 
 var images = [
   "./img/otz1.png",
@@ -210,10 +222,10 @@ function showNotification() {
   var randomIndex = Math.floor(Math.random() * images.length);
   image.src = images[randomIndex];
   notification.style.display = "block";
-  image.addEventListener("click", function() {
+  image.addEventListener("click", function () {
     notification.style.display = "none";
   });
-  setTimeout(function() {
+  setTimeout(function () {
     notification.style.display = "block";
   }, 20000);
 }
@@ -226,29 +238,34 @@ const block3 = document.getElementById('block3')
 
 const bquiz = document.getElementById('btn-quiz')
 const bquiz1 = document.getElementById('btn-quiz1')
-const bquiz2 = document.getElementById('btn-quiz2')
-const bquiz3 = document.getElementById('btn-quiz3')
-const bquiz4 = document.getElementById('btn-quiz4')
 
-bquiz.addEventListener("click", function() {
+bquiz.addEventListener("click", function () {
   block1.style.display = "none";
   block2.style.display = "block";
 });
-bquiz1.addEventListener("click", function() {
+bquiz1.addEventListener("click", function () {
   block1.style.display = "none";
   block2.style.display = "block";
 });
 
-bquiz2.addEventListener("click", function() {
+otherButton.addEventListener("click", function () {
   block2.style.display = "none";
   block3.style.display = "block";
 });
-bquiz3.addEventListener("click", function() {
-  block2.style.display = "none";
-  block3.style.display = "block";
+
+
+var element = document.getElementById("bottombar1");
+
+element.addEventListener("click", function () {
+  element.classList.add("hidden-red");
 });
-bquiz4.addEventListener("click", function() {
-  block2.style.display = "none";
-  block3.style.display = "block";
-});
+function getRandomNumber(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+setInterval(function () {
+  var randomNumber = getRandomNumber(110, 240);
+  document.getElementById("rancount").innerHTML = randomNumber;
+}, 10000);
+
 

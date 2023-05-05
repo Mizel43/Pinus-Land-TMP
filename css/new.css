@@ -226,8 +226,9 @@ li {
 }
 
 .modal-dialog {
-  margin: 50% auto;
-  width: 80%;
+  position: absolute;
+  top: calc(50% - 115px);
+  left: calc(50% - 200px);
   max-width: 500px;
 }
 
@@ -250,4 +251,20 @@ li {
   color: black;
   text-decoration: none;
   cursor: pointer;
+}
+.selected .card{
+  border: 2px solid rgb(220, 53, 69);
+  box-shadow: 2px 2px 2px rgba(220, 53, 69, .5);
+}
+/* .card-body{
+  padding-left: 3px;
+} */
+#bottombar1{
+  position: fixed;
+  bottom: 0; 
+  right: 0;
+  z-index: 12121;
+}
+.hidden-red{
+  display: none;
 }
