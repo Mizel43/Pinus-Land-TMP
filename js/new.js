@@ -4,6 +4,11 @@ function addComment() {
   // получаем текст комментария из поля ввода
   var commentText = document.getElementById("comment-input").value;
 
+  // проверяем, что поле ввода не пустое
+  if (commentText.trim() === "") {
+    return;
+  }
+
   // создаем новый элемент списка
   var newComment = document.createElement("li");
   newComment.classList.add("comment-item", "my-3", "gap-3", "d-flex");
@@ -79,10 +84,11 @@ function addComment() {
 // назначаем обработчик событий для кнопки "Send"
 var sendButton = document.querySelector("#comment-form button[type='submit']");
 sendButton.onclick = function() {
-  addComment();
+  
+    addComment();
+  
 };
 
-// функция для лайков комментариев
 function likeComment(comment) {
   // получаем количество лайков для комментария
   var likes = comment.querySelector(".like-counter span").textContent;
@@ -90,6 +96,16 @@ function likeComment(comment) {
 
   // обновляем количество лайков для комментария
   comment.querySelector(".like-counter span").textContent = likes;
+
+  // проверяем, был ли уже добавлен лайк
+  var likeButton = comment.querySelector(".shadow, .like-span, .like-span1, .like-span2, .like-span3, .like-span4, .like-span5, .like-span6, .like-span7, .like-span8, .like-span9, .like-span10, .like-span11, .like-span12, .like-span13, .like-span14, .like-span15");
+  if (likeButton.getAttribute("liked") === "true") {
+    return;
+  }
+
+  // добавляем лайк и изменяем значение атрибута "liked"
+  likeButton.classList.add("liked");
+  likeButton.setAttribute("liked", "true");
 }
 
 // получаем все элементы "like-span" на странице
@@ -111,6 +127,8 @@ commentSubmit.addEventListener('click', function() {
 var lastComment = commentsList.lastElementChild;
 lastComment.scrollIntoView({ behavior: 'smooth' });
 });
+
+
 
 // квиз js
 var currentSlide = 0;
