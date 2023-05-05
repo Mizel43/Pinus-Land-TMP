@@ -143,6 +143,10 @@ li {
   padding-right: 50px;
   padding-left: 50px;
 }
+.grow-btn1{
+  padding-right: 85px;
+  padding-left: 85px;
+}
 .posr {
   position: relative;
 }
