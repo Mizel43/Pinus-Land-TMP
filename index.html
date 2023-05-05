@@ -47,8 +47,8 @@
     </nav>
     <!-- end nav -->
 
-    <div class="row my-4 row-cols-1 row-cols-lg-2 d-flex flex-wrap-reverse">
-      <div class="col fw-bold">
+    <div class="row my-lg-4 my-3 row-cols-1 row-cols-lg-2 d-flex flex-wrap-reverse">
+      <div class="col fw-bold mt-lg-0 mt-2">
         <h1>asdas[pdo[ aspod[aos d[paos[dp <span class="badge text-bg-danger">Danger asdasdasda</span> ;lasdl;kal;k
           a;sdkal skd;alsdasdasdasdsa asdasdasd asdasd as asdsadasdas asdasdasdas </h1>
       </div>
@@ -104,8 +104,8 @@
     </div>
 
     <div class="row mt-4 mb-2">
-      <div class="col-lg-6 d-grid mx-auto">
-        <a class="grow-btn btn btn-danger rounded-pill py-lg-4 py-4 fs-3 fw-bold mx-auto" id="btn-quiz" href="#" role="button">Получить рекомендации</a>
+      <div class="col-lg-6 d-grid mx-auto" id="btn-quiz">
+        <a class="grow-btn btn btn-danger rounded-pill py-lg-4 py-2 fs-3 fw-bold mx-auto" href="#" role="button">Получить рекомендации</a>
       </div>
     </div>
     <div class="row mb-5">
@@ -125,8 +125,17 @@
           <div class="smile-box col">
             <input type="text" id="comment-input" class="form-control rounded-pill" placeholder="Написать комментарий">
             <img src="./img/smile.png" width="20px" height="20px" alt="pic" class="smile-img rounded-circle">
+            
           </div>
-          <button type="submit" id="comment-submit" class="btn btn-primary rounded">Send</button>
+          <button type="submit" id="comment-submit" class="py-2 btn btn-primary rounded col-lg-2">Send</button>
+        </div>
+        <div id="comment-modal" class="modal">
+          <div class="modal-dialog">
+            <div class="modal-content">
+                <h5 class="modal-title text-center mb-2">Пожалуйста, напишите комментарий.</h5>
+                <button type="button" class="btn btn-secondary col-lg-7 col mx-auto" id="clobtn" data-dismiss="modal">Закрыть</button>
+            </div>
+          </div>
         </div>
         <hr>
       <ul id="comments-list" class="comments-group">
@@ -404,7 +413,7 @@
       </ul>
     </div>
     <div class="row my-3">
-      <div class="col-lg-6 d-grid mx-auto">
+      <div class="col-lg-6 d-grid mx-auto" id="btn-quiz1">
         <a class="btn btn-danger rounded-pill py-lg-4 py-4 fs-3 fw-bold" href="#" role="button">Получить рекомендации</a>
       </div>
     </div>
@@ -414,7 +423,7 @@
 
   <div class="container pb-4 rounded my-4" id="block2" style="background-color: #fff;">
     <!-- nav -->
-    <nav class="navbar navbar-expand bg-body-tertiary mb-3" style="width: 102%; margin-left: -1%;">
+    <nav class="navbar navbar-expand bg-body-tertiary" style="width: 102%; margin-left: -1%;">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">
           Navbar
@@ -443,11 +452,11 @@
       </div>
     </nav>
     <!-- end nav -->
-    <div class="slider px-4">
+    <div class="slider px-4 py-3">
       <div class="slide">
         <div class="slide-item-box row-cols-1 row">
           <ul class="col col-lg-5">
-            <li class="fs-2 mb-3 fw-bold">
+            <li class="li-b fs-2 mb-3 fw-bold">
               Вопрос 1asdaasd sadasa sdasdadasda sdsdasd asdas dasdasda sdasdasdasd as
             </li>
             <li class="li-a btn btn-danger fs-5">Ответ 1asdsada</li> <br>
@@ -464,7 +473,7 @@
       <div class="slide">
         <div class="slide-item-box row">
           <ul class="col col-lg-5">
-            <li class="fs-2 mb-3 fw-bold">
+            <li class="li-b fs-2 mb-3 fw-bold">
               Вопрос 1asdaasd sadasa sdasdadasda sdsdasd asdas dasdasda sdasdasdasd as
             </li>
             <li class="li-a btn btn-danger fs-5">Ответ 1asdsada</li> <br>
@@ -481,7 +490,7 @@
       <div class="slide">
         <div class="slide-item-box row">
           <ul class="col col-lg-5">
-            <li class="fs-2 mb-3 fw-bold">
+            <li class="li-b fs-2 mb-3 fw-bold">
               Вопрос sdasdadasda sdsdasd asdas dasdasda sdasdasdasd as
             </li>
             <li class="li-a btn btn-danger fs-5">Ответ 1asa</li> <br>
@@ -498,7 +507,7 @@
       <div class="slide">
         <div class="slide-item-box row">
           <ul class="col col-lg-5">
-            <li class="fs-2 mb-3 fw-bold">
+            <li class="li-b fs-2 mb-3 fw-bold">
               Вопрос 1asdaasd sadasa sdasdad dasd asdas dasdasda sdasdasdasd as
             </li>
             <li class="li-a btn btn-danger fs-5">Ответ 1asdsada</li> <br>
@@ -515,12 +524,12 @@
       <div class="slide">
         <div class="slide-item-box row">
           <ul class="col col-lg-5">
-            <li class="fs-2 mb-3 fw-bold">
+            <li class="li-b fs-2 mb-3 fw-bold">
               Вопрос 1asdaasd sadasa sdasdadasdasd as
             </li>
-            <li class="btn btn-danger fs-5">Ответ 1</li> <br>
-            <li class="btn btn-danger fs-5">Ответdfsdfsdfsdf 2</li> <br>
-            <li class="btn btn-danger fs-5">Ответ 3</li>
+            <li class="btn btn-danger fs-5" id="btn-quiz2">Ответ 1</li> <br>
+            <li class="btn btn-danger fs-5" id="btn-quiz3">Ответdfsdfsdfsdf 2</li> <br>
+            <li class="btn btn-danger fs-5" id="btn-quiz4">Ответ 3</li>
           </ul>
           <img class="col col-lg-7" src="./img/headpic.png" alt="Картинка 5">
         </div>
@@ -592,7 +601,7 @@
       </div>
       <div class="row mt-4 mb-2">
         <div class="col-lg-6 col-12 d-grid mx-auto">
-          <a class="grow-btn1 btn btn-danger rounded-pill py-lg-4 fs-4 fw-bold mx-auto" id="btn-quiz" href="#" role="button">УВЕЛИЧИТЬ ЧЛЕН ПРЯМО СЕЙЧАС</a>
+          <a class="grow-btn1 btn btn-danger rounded-pill py-lg-4 fs-4 fw-bold mx-auto" href="#" role="button">УВЕЛИЧИТЬ ЧЛЕН ПРЯМО СЕЙЧАС</a>
         </div>
       </div>
       <div class="row mb-4">

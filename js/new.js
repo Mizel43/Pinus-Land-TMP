@@ -11,7 +11,7 @@ function addComment() {
 
   // создаем новый элемент списка
   var newComment = document.createElement("li");
-  newComment.classList.add("comment-item", "my-3", "gap-3", "d-flex");
+  newComment.classList.add("move-i", "comment-item", "my-3", "gap-3", "d-flex");
 
   // добавляем аватар пользователя
   var avatar = document.createElement("img");
@@ -79,15 +79,8 @@ function addComment() {
 
   // очищаем поле ввода
   document.getElementById("comment-input").value = "";
-}
 
-// назначаем обработчик событий для кнопки "Send"
-var sendButton = document.querySelector("#comment-form button[type='submit']");
-sendButton.onclick = function() {
-  
-    addComment();
-  
-};
+}
 
 function likeComment(comment) {
   // получаем количество лайков для комментария
@@ -119,15 +112,42 @@ likeSpans.forEach(function(likeSpan) {
   };
 });
 
-// Смещение вьюпорта к последнему добавленному комментарию
-var commentSubmit = document.getElementById('comment-submit');
-var commentsList = document.getElementById('comments-list');
-
-commentSubmit.addEventListener('click', function() {
-var lastComment = commentsList.lastElementChild;
-lastComment.scrollIntoView({ behavior: 'smooth' });
+// создаем новый экземпляр MutationObserver
+var observer = new MutationObserver(function(mutations) {
+  mutations.forEach(function(mutation) {
+    // проверяем, появился ли элемент с классом move-i
+    var moveElement = mutation.target.querySelector('.move-i');
+    if (moveElement) {
+      moveElement.scrollIntoView({ behavior: 'smooth' });
+      // останавливаем наблюдение, если элемент найден
+      observer.disconnect();
+    }
+  });
 });
 
+// настраиваем наблюдение за изменениями в DOM
+var config = { childList: true, subtree: true };
+observer.observe(document.body, config);
+
+
+// назначаем обработчик событий для кнопки "Send"
+var sendButton = document.querySelector("#comment-form button[type='submit']");
+sendButton.onclick = function() {
+  var commentInput = document.getElementById("comment-input").value;
+  if (commentInput.trim() == "") {
+    var modal = document.getElementById("comment-modal");
+    modal.style.display = "block";
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      } else if (event.target == clobtn) {
+        modal.style.display = "none";
+      }
+    }
+  } else {
+    addComment();
+  }
+};
 
 
 // квиз js
@@ -199,3 +219,36 @@ function showNotification() {
 }
 
 setInterval(showNotification, 20000);
+
+const block1 = document.getElementById('block1')
+const block2 = document.getElementById('block2')
+const block3 = document.getElementById('block3')
+
+const bquiz = document.getElementById('btn-quiz')
+const bquiz1 = document.getElementById('btn-quiz1')
+const bquiz2 = document.getElementById('btn-quiz2')
+const bquiz3 = document.getElementById('btn-quiz3')
+const bquiz4 = document.getElementById('btn-quiz4')
+
+bquiz.addEventListener("click", function() {
+  block1.style.display = "none";
+  block2.style.display = "block";
+});
+bquiz1.addEventListener("click", function() {
+  block1.style.display = "none";
+  block2.style.display = "block";
+});
+
+bquiz2.addEventListener("click", function() {
+  block2.style.display = "none";
+  block3.style.display = "block";
+});
+bquiz3.addEventListener("click", function() {
+  block2.style.display = "none";
+  block3.style.display = "block";
+});
+bquiz4.addEventListener("click", function() {
+  block2.style.display = "none";
+  block3.style.display = "block";
+});
+
