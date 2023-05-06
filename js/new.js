@@ -175,38 +175,32 @@ function showSlide(n) {
     otherButton.style.display = 'block';
   } else {
     nextButton.style.display = 'block';
-    prevButton.style.display = 'block';
+    prevButton.style.display = 'none';
     otherButton.style.display = 'none';
   }
 }
-
 // добавляем обработчик события click для всех ответов
 var answers = document.querySelectorAll('.slide-item-box li');
-answers.forEach(function (answer) {
-  answer.addEventListener('click', function () {
+answers.forEach(function(answer) {
+  answer.addEventListener('click', function() {
     // добавляем класс selected к выбранному ответу
-    answers.forEach(function (a) {
+    answers.forEach(function(a) {
       a.classList.remove('selected');
     });
     answer.classList.add('selected');
+
+    // переключаем на следующий слайд
+    showSlide(currentSlide + 1);
   });
 });
 
 // изменяем обработчик события click для кнопки "Далее"
 nextButton.addEventListener('click', function () {
-  // проверяем, выбран ли ответ на текущем слайде
-  var selectedAnswer = slides[currentSlide].querySelector('.selected');
-  if (selectedAnswer) {
     // переключаем на следующий слайд
     showSlide(currentSlide + 1);
-  }
 });
 
 showSlide(currentSlide);
-
-prevButton.addEventListener('click', function () {
-  showSlide(currentSlide - 1);
-});
 
 var images = [
   "./img/otz1.png",
@@ -216,21 +210,37 @@ var images = [
   "./img/otz5.png"
 ];
 
+var notificationShown = false;
+
 function showNotification() {
-  var notification = document.getElementById("notification");
-  var image = document.getElementById("notification-image");
-  var randomIndex = Math.floor(Math.random() * images.length);
-  image.src = images[randomIndex];
-  notification.style.display = "block";
-  image.addEventListener("click", function () {
-    notification.style.display = "none";
-  });
-  setTimeout(function () {
-    notification.style.display = "block";
-  }, 20000);
+var notification = document.getElementById("notification");
+var image = document.getElementById("notification-image");
+var notification1 = document.getElementById("btnposa");
+var randomIndex = Math.floor(Math.random() * images.length);
+image.src = images[randomIndex];
+notification.style.display = "block";
+image.addEventListener("click", function () {
+notification.style.display = "none";
+setTimeout(showNotification, 25000);
+});
+notification1.addEventListener("click", function () {
+notification.style.display = "none";
+setTimeout(showNotification, 25000);
+});
+notificationShown = true;
+setTimeout(function () {
+notification.style.display = "block";
+}, 5000);
 }
 
-setInterval(showNotification, 20000);
+setTimeout(function() {
+showNotification();
+setInterval(function() {
+if (!notificationShown) {
+showNotification();
+}
+}, 5000);
+}, 205000);
 
 const block1 = document.getElementById('block1')
 const block2 = document.getElementById('block2')
@@ -238,6 +248,10 @@ const block3 = document.getElementById('block3')
 
 const bquiz = document.getElementById('btn-quiz')
 const bquiz1 = document.getElementById('btn-quiz1')
+const bquiz2 = document.getElementById('btn-quiz2')
+const bquiz3 = document.getElementById('btn-quiz3')
+const bquiz4 = document.getElementById('btn-quiz4')
+const bquiz5 = document.getElementById('btn-quiz5')
 
 bquiz.addEventListener("click", function () {
   block1.style.display = "none";
@@ -249,6 +263,22 @@ bquiz1.addEventListener("click", function () {
 });
 
 otherButton.addEventListener("click", function () {
+  block2.style.display = "none";
+  block3.style.display = "block";
+});
+bquiz2.addEventListener("click", function () {
+  block2.style.display = "none";
+  block3.style.display = "block";
+});
+bquiz3.addEventListener("click", function () {
+  block2.style.display = "none";
+  block3.style.display = "block";
+});
+bquiz4.addEventListener("click", function () {
+  block2.style.display = "none";
+  block3.style.display = "block";
+});
+bquiz5.addEventListener("click", function () {
   block2.style.display = "none";
   block3.style.display = "block";
 });
