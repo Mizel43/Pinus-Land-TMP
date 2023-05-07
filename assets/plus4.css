@@ -1,0 +1,134 @@
+html {
+  background-color: rgb(255, 255, 255);
+}
+
+body {
+  background-color: white;
+}
+
+.iti__country-list {
+  z-index: 20;
+}
+
+input {
+  width: 100%;
+  max-width: 100%;
+  height: 60px!important;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--color-bg-6,var(--grey-blue));
+  padding-left: 3.4rem;
+  background: none!important;
+}
+
+.toplabel {
+  text-transform: uppercase;
+    padding-left: 3px;
+    font-size: 12px;
+    font-weight: 700;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 1.2px;
+    text-align: left;
+    word-break: break-all;
+    color: var(--color-bg-alpha7,#2e2e54);
+}
+
+.posspan {
+  top: 20% !important;
+  left: 4% !important;
+}
+/* .header1 {
+  background-size: contain;
+  background-image: url(./header2.png); 
+  background-repeat: no-repeat; 
+  width: 100%; 
+  height: 60px; 
+  background-position: center; 
+  padding: 20px 0;
+} */
+
+.header-border {
+  border-bottom: 1px solid #043063;
+}
+
+.fonpage {
+  background-image: url(./banner.webp);
+  background-size: cover;
+  background-position: center;
+}
+
+.test-step {
+  display: none;
+}
+
+.header1 {
+  display: none;
+}
+
+.header1.active {
+  display: flex !important;
+  transition: 1s;
+  justify-content: center;
+}
+
+.test-step.active {
+  display: block;
+}
+
+.app__start-page.test-step.active {
+  display: flex;
+}
+
+.custom-logo-black {
+  height: 60px;
+  max-width: 240px;
+}
+
+.custom-app-wrapper {
+  --color:black;
+  --color-lighten:#4290FC;
+  --color-lighten10:#4290FC;
+  --color-lighten2:#4290fc;
+  --color-darken:#002d75;
+  --color-darken10:#0041a8;
+  --color-alpha:rgba(0, 84, 221, 0.5);
+  --color-alpha2:rgba(0, 84, 221, 0.2);
+  --color-alpha3:rgba(0, 84, 221, 0.05);
+  --color-text:#ffffff;
+  --color-text2:#0054dd;
+  --gradient-main:331deg, rgb(0, 45, 117), rgb(66, 139, 255);
+  --color-primary-text-button:#FFF;
+  --color-bg-sidebar:#f7f7f7;
+  --color-bg-1:#ededed;
+  --color-bg-2:#e6e6e6;
+  --color-bg-3:#cccccc;
+  --color-bg-4:#b3b3b3;
+  --color-bg-5:#999999;
+  --color-bg-6:rgba(0, 0, 0, 0.7);
+  --color-bg-7:#ededed;
+  --color-bg-8:#d9d9d9;
+  --color-bg-9:#363636;
+  --color-bg-text:#000000;
+  --color-bg-quiz:#ffffff;
+  --color-bg-alpha0:rgba(255, 255, 255, 0);
+  --color-bg-alpha2:rgba(0, 0, 0, 0.2);
+  --color-bg-alpha7:rgba(0, 0, 0, 0.7);
+  --color-white-label:#ffffff;
+  --color-bg-sub-text:#a6a6a6;
+  --font:Inter;
+}
+
+@media all and (max-width: 850px) {
+  .final-page_horizontal {
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+  }
+
+  form.lead-form {
+    margin-bottom: 20px;
+  }
+}
+
