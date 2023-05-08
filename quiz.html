@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru" class="wf-inter-n4-active wf-inter-n6-active wf-inter-n7-active wf-active">
+<html lang="ru" style="position: relative; height: 100%;" class="wf-inter-n4-active wf-inter-n6-active wf-inter-n7-active wf-active">
 
 <head>
   <meta charset="UTF-8">
@@ -34,54 +34,17 @@
   <link rel="stylesheet" href="assets/css.css">
 </head>
 
-<body>
+<body style="position: relative; height: 100%;">
   <div id="notification">
     <button type="button" class="btn-close" id="btnposa" data-bs-dismiss="modal" aria-label="Close"></button>
     <img id="notification-image" src="" alt="Notification Image">
   </div>
 
-  <div class="header1 active">
-    <img src="assets/logo_black.webp" class="custom-logo-black" alt="" width="640" height="360">
-  </div>
   <div class="custom-app-wrapper app-wrapper light-blue" id="block2">
     <div id="app" class="app">
       <div class="layout">
-        <div class="app__start-page test-step active">
-          <div
-            class="start-page columns is-desktop-modal start-page_has_bg start-page_position_right start-page_mode_start start-page_theme_expanded">
-            <div class="start-page__bg fonpage"></div>
 
-            <div class="start-page__content column is-5" style="z-index: 100;">
-              <div class="start-page__body">
-                <div class="start-page__line"></div>
-                <h1 class="start-page__header">
-                  Как реализовать свои мечты с инвестиционной платформой “Tesla X”?
-                </h1>
-                <h2 class="start-page__subheader">
-                  Пройдите официальный тест от <br><strong>“Tesla X”</strong>, чтобы получить доступ к
-                  платформе и начать зарабатывать
-                </h2>
-                <button class="start-page__button button is-primary is-blicked has-light-shadow next-btn"
-                  style="background-color: black !important;">
-                  <span class="icon">
-                    <svg viewBox="0 0 24 24" class="mdi-icon mdi-24px">
-                      <title>mdi-checkbox-marked-circle-outline</title>
-                      <path
-                        d="M20,12C20,16.42 16.42,20 12,20C7.58,20 4,16.42 4,12C4,7.58 7.58,4 12,4C12.76,4 13.5,4.11 14.2,4.31L15.77,2.74C14.61,2.26 13.34,2 12,2C6.48,2 2,6.48 2,12C2,17.52 6.48,22 12,22C17.52,22 22,17.52 22,12M7.91,10.08L6.5,11.5L11,16L21,6L19.59,4.58L11,13.17L7.91,10.08Z"
-                        stroke-width="0" fill-rule="nonzero"></path>
-                    </svg>
-                  </span>
-                  &nbsp;
-                  Начать тест
-                </button>
-
-              </div>
-
-            </div>
-            <div class="start-page__layer"></div>
-          </div>
-        </div>
-        <div class="quiz-container test-step">
+        <div class="quiz-container test-step active">
           <div class="quiz">
             <div class="quiz__questions ">
               <div class="quiz__questions-header">
@@ -610,7 +573,7 @@
                       </svg>
                     </span>
                   </button>
-                  <button class="button quiz-buttons__button quiz-buttons__button_next is-outline next-btn last-btn">
+                  <button onclick="openNewTab1()" class="button quiz-buttons__button quiz-buttons__button_next is-outline next-btn last-btn">
                     <span class="quiz-buttons__button_next-text">Далее</span>
                     <span class="icon quiz-buttons__next-icon">
                       <svg viewBox="0 0 24 24" class="mdi-icon mdi-24px">
@@ -630,111 +593,7 @@
           </div>
 
         </div>
-
-        <div class="quiz-container quiz-container_has_results test-step">
-          <div class="quiz__lead-form">
-            <div class="final-page final-page_horizontal">
-              <div class="final-page__content-container">
-
-                <div class="final-page__header-container">
-                  <div class="final-page__header">
-                    Поздравляем! Вам стали доступны инвестиции на платформе “Tesla X”.
-                  </div>
-                  <div class="final-page__content">
-                    <p>
-                      Оставьте свои контактные данные и начинайте зарабатывать уже сейчас.
-                    </p>
-                  </div>
-                </div>
-
-              </div>
-              <div class="final-page__form">
-
-                <div name="contacts" class="lead-form">
-                  <form id="form-4401" class="lead-form" autocomplete="on">
-                    <div class="step">
-                      <label class="label toplabel">Введите имя</label>
-                      <div class="input-wrap control has-icons-left has-icons-right is-large">
-                        <input type="text" name="f_name" id="f_name-81897" placeholder="Введите имя" class=""
-                          autocomplete="on">
-                        <span class="icon is-left is-medium posspan">
-                          <svg viewBox="0 0 24 24" class="mdi-icon mdi-36px">
-                            <title>mdi-account</title>
-                            <path
-                              d="M12,4C14.21,4 16,5.79 16,8C16,10.21 14.21,12 12,12C9.79,12 8,10.21 8,8C8,5.79 9.79,4 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z"
-                              stroke-width="0" fill-rule="nonzero"></path>
-                          </svg>
-                        </span>
-                        <div class="help-block help-block-error"></div>
-                      </div>
-                      <label class="label toplabel">Введите фамилию</label>
-                      <div class="input-wrap control has-icons-left has-icons-right is-large">
-                        <input type="text" name="l_name" id="l_name-81897" placeholder="Введите фамилию" class=""
-                          autocomplete="on">
-                        <span class="icon is-left is-medium posspan">
-                          <svg viewBox="0 0 24 24" class="mdi-icon mdi-36px">
-                            <title>mdi-account</title>
-                            <path
-                              d="M12,4C14.21,4 16,5.79 16,8C16,10.21 14.21,12 12,12C9.79,12 8,10.21 8,8C8,5.79 9.79,4 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z"
-                              stroke-width="0" fill-rule="nonzero"></path>
-                          </svg>
-                        </span>
-                        <div class="help-block help-block-error"></div>
-                      </div>
-                      <label class="label toplabel">Введите E-Mail</label>
-                      <div class="input-wrap control has-icons-left has-icons-right is-large">
-                        <input type="email" name="email" id="email-81897" placeholder="Введите электронный адрес"
-                          class="" autocomplete="on">
-                        <span class="icon is-left is-medium posspan">
-                          <svg viewBox="0 0 24 24" class="mdi-icon mdi-36px">
-                            <title>mdi-account</title>
-                            <path
-                              d="M12,4C14.21,4 16,5.79 16,8C16,10.21 14.21,12 12,12C9.79,12 8,10.21 8,8C8,5.79 9.79,4 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z"
-                              stroke-width="0" fill-rule="nonzero"></path>
-                          </svg>
-                        </span>
-                        <div class="help-block help-block-error"></div>
-                      </div>
-                    </div>
-                    <div class="step">
-                      <label class="label toplabel">Введите телефон</label>
-                      <div class="input-wrap">
-                        <div class="iti iti--allow-dropdown iti--separate-dial-code">
-                          <input type="tel" autocomplete="on" id="phone-81897" maxlength="15" name="phone"
-                            required="true" tabindex="0" class="vti__input" data-intl-tel-input-id="0" data-iti="0"
-                            placeholder="" style="padding-left: 1200px;">
-                        </div>
-                        <input type="hidden" name="phone2" class="phone2" autocomplete="on" required="">
-                        <input type="hidden" name="pixel_id" value="" autocomplete="on">
-                        <input type="hidden" name="query"
-                          value="wbraid=ClIKCQjwo7iiBhDuARJBAJgbIsnESzza7bIH_PtkQrWlE_vFfxw4nERfJBGNmc84qMYMX705BNHUHUf6IbRjcJpEbIIpf2gTTTAWznP3eoQaAvZZ"
-                          autocomplete="on">
-
-                      </div>
-                      <span class="focus-border"><i></i></span>
-                    </div>
-                    <div class="checkbox-wrap valid lead-form__agreement">
-                      <input type="checkbox" name="politics" id="politics-4401"
-                        style="width: auto; max-width: auto !important; height: auto !important;" autocomplete="on">
-                      <label for="politics-4401">Я согласен с <a href="javascript:void(0)" data-name="policy"
-                          class="alterlink">Политикой Конфиденциальности</a></label>
-                    </div>
-                    <div class="checkbox-wrap valid lead-form__agreement">
-                      <input type="checkbox" name="over" id="over-4401"
-                        style="width: auto; max-width: auto !important; height: auto !important;" autocomplete="on">
-                      <label for="over-4401">Мне больше 18 лет</label>
-                    </div>
-                    <div onclick="openNewTab1()" class="input-wrap" style="padding-top: 20px;">
-                      <button type="submit"
-                        class="lead-form__button button button_color_theme is-medium is-outline">Зарегистрироваться</button>
-                    </div>
-                  </form>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
+        
       </div>
     </div>
   </div>
@@ -747,66 +606,81 @@
     <span> <span id="rancount">184</span> people are reading this page right now.</span>
   </div>
 
-  <script>  
+  <script>
     window.addEventListener("DOMContentLoaded", () => {
       var images = [
-      "./img/otz1.png",
-      "./img/otz2.png",
-      "./img/otz3.png",
-      "./img/otz4.png",
-      "./img/otz5.png"
-    ];
-    
-    var notificationShown = false;
-    
-    function showNotification() {
-    var notification = document.getElementById("notification");
-    var image = document.getElementById("notification-image");
-    var notification1 = document.getElementById("btnposa");
-    var randomIndex = Math.floor(Math.random() * images.length);
-    image.src = images[randomIndex];
-    notification.style.display = "block";
-    image.addEventListener("click", function () {
-    notification.style.display = "none";
-    setTimeout(showNotification, 25000);
+        "./img/otz1.png",
+        "./img/otz2.png",
+        "./img/otz3.png",
+        "./img/otz4.png",
+        "./img/otz5.png"
+      ];
+
+      var notificationShown = false;
+
+      function showNotification() {
+        var notification = document.getElementById("notification");
+        var image = document.getElementById("notification-image");
+        var notification1 = document.getElementById("btnposa");
+        var randomIndex = Math.floor(Math.random() * images.length);
+        image.src = images[randomIndex];
+        notification.style.display = "block";
+        image.addEventListener("click", function () {
+          notification.style.display = "none";
+          setTimeout(showNotification, 25000);
+        });
+        notification1.addEventListener("click", function () {
+          notification.style.display = "none";
+          setTimeout(showNotification, 25000);
+        });
+        notificationShown = true;
+        setTimeout(function () {
+          notification.style.display = "block";
+        }, 5000);
+      }
+
+      setTimeout(function () {
+        showNotification();
+        setInterval(function () {
+          if (!notificationShown) {
+            showNotification();
+          }
+        }, 5000);
+      }, 25000);
     });
-    notification1.addEventListener("click", function () {
-    notification.style.display = "none";
-    setTimeout(showNotification, 25000);
+
+    // нижний счетчик попап 
+    var element = document.getElementById("bottombar1");
+
+    element.addEventListener("click", function () {
+      element.classList.add("hidden-red");
     });
-    notificationShown = true;
-    setTimeout(function () {
-    notification.style.display = "block";
-    }, 5000);
+    function getRandomNumber(min, max) {
+      return Math.floor(Math.random() * (max - min + 1)) + min;
     }
-    
-    setTimeout(function() {
-    showNotification();
-    setInterval(function() {
-    if (!notificationShown) {
-    showNotification();
-    }
-    }, 5000);
-    }, 25000);
-    });
-    </script>
+
+    setInterval(function () {
+      var randomNumber = getRandomNumber(110, 240);
+      document.getElementById("rancount").innerHTML = randomNumber;
+    }, 10000);
+  </script>
 
   <script>
     function openNewTab1() {
       // Открываем страницу в новой вкладке
-      window.open('./finpage.html', '_blank');
+      window.open('./finpage.html', '_self');
     }
-    </script>
+  </script>
 
-<div class="pop-outer">
-  <div class="pop-bg"></div>
-  <div class="pop-inner">
-    <div class="pop-close">X</div>
-    <div class="pop-inner__in">
+  <div class="pop-outer">
+    <div class="pop-bg"></div>
+    <div class="pop-inner">
+      <div class="pop-close">X</div>
+      <div class="pop-inner__in">
 
+      </div>
     </div>
   </div>
-</div>
   <script src="assets/jquery-3.6.3.min.js"></script>
   <script src="assets/bootstrap.min.js"></script>
   <script src="assets/custom6.js"></script>
