@@ -267,7 +267,6 @@
                       </svg>
                     </span>
                   </button>
-                  <span class="quiz-buttons__hint">или нажмите <b>Enter</b></span>
                 </div>
 
               </div>
@@ -374,7 +373,6 @@
                       </svg>
                     </span>
                   </button>
-                  <span class="quiz-buttons__hint">или нажмите <b>Enter</b></span>
                 </div>
 
               </div>
@@ -474,7 +472,6 @@
                       </svg>
                     </span>
                   </button>
-                  <span class="quiz-buttons__hint">или нажмите <b>Enter</b></span>
                 </div>
 
               </div>
@@ -601,10 +598,10 @@
 
 
 
-  <div class="badge text-bg-danger fs-4" id="bottombar1">
+  <!-- <div class="badge text-bg-danger fs-4" id="bottombar1">
     <button type="button" class="btn-close" id="btnposa1" data-bs-dismiss="modal" aria-label="Close"></button>
     <span> <span id="rancount">184</span> people are reading this page right now.</span>
-  </div>
+  </div> -->
 
   <script>
     window.addEventListener("DOMContentLoaded", () => {
@@ -670,20 +667,20 @@
       }, 10000);
     });
 
-    // нижний счетчик попап 
-    var element = document.getElementById("bottombar1");
+    // // нижний счетчик попап 
+    // var element = document.getElementById("bottombar1");
 
-    element.addEventListener("click", function () {
-      element.classList.add("hidden-red");
-    });
-    function getRandomNumber(min, max) {
-      return Math.floor(Math.random() * (max - min + 1)) + min;
-    }
+    // element.addEventListener("click", function () {
+    //   element.classList.add("hidden-red");
+    // });
+    // function getRandomNumber(min, max) {
+    //   return Math.floor(Math.random() * (max - min + 1)) + min;
+    // }
 
-    setInterval(function () {
-      var randomNumber = getRandomNumber(110, 240);
-      document.getElementById("rancount").innerHTML = randomNumber;
-    }, 10000);
+    // setInterval(function () {
+    //   var randomNumber = getRandomNumber(110, 240);
+    //   document.getElementById("rancount").innerHTML = randomNumber;
+    // }, 10000);
   </script>
 
   <script>

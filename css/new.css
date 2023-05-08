@@ -412,6 +412,10 @@ li {
   padding: 23px 0;
   transition: all .3s ease-in-out;
 }
+.form__name, .form__secondname, .form__email,
+.form__country, .form__code, .form__phone{
+  color: #000000!important;
+}
 
 /* .form_btn:hover {
     background: #dc3545!important; } */
