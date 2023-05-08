@@ -150,7 +150,7 @@
                       </svg>
                     </span>
                   </button>
-                  <span class="quiz-buttons__hint">или нажмите <b>Enter</b></span>
+                  
                 </div>
 
               </div>
@@ -495,7 +495,7 @@
               <div class="question quiz__question question_variants" id="DJ17A5860g">
                 <div class="answer-variants answer-variants_has_image">
                   <div class="answer-variants__group">
-                    <div data-element-index="0" class="answer-variants__variant-text" style="">
+                    <div onclick="openNewTab1()" data-element-index="0" class="answer-variants__variant-text" style="">
                       <label tabindex="0" class="b-radio _js-input radio">
                         <input tabindex="-1" type="radio" name="step5" value="Наружная реклама">
                         <span class="check"></span>
@@ -506,7 +506,7 @@
                         </span>
                       </label>
                     </div>
-                    <div data-element-index="0" class="answer-variants__variant-text" style="">
+                    <div onclick="openNewTab1()" data-element-index="0" class="answer-variants__variant-text" style="">
                       <label tabindex="0" class="b-radio _js-input radio">
                         <input tabindex="-1" type="radio" name="step5" value="Реклама в интернете">
                         <span class="check"></span>
@@ -517,7 +517,7 @@
                         </span>
                       </label>
                     </div>
-                    <div data-element-index="0" class="answer-variants__variant-text" style="">
+                    <div onclick="openNewTab1()" data-element-index="0" class="answer-variants__variant-text" style="">
                       <label tabindex="0" class="b-radio _js-input radio">
                         <input tabindex="-1" type="radio" name="step5" value="Рекомендации знакомых">
                         <span class="check"></span>
@@ -608,7 +608,7 @@
 
   <script>
     window.addEventListener("DOMContentLoaded", () => {
-      var images = [
+      const images = [
         "./img/otz1.png",
         "./img/otz2.png",
         "./img/otz3.png",
@@ -616,19 +616,31 @@
         "./img/otz5.png"
       ];
 
-      var notificationShown = false;
+      let notificationShown = false;
 
       function showNotification() {
-        var notification = document.getElementById("notification");
-        var image = document.getElementById("notification-image");
-        var notification1 = document.getElementById("btnposa");
-        var randomIndex = Math.floor(Math.random() * images.length);
+        const notification = document.getElementById("notification");
+        const image = document.getElementById("notification-image");
+        const notification1 = document.getElementById("btnposa");
+        const randomIndex = Math.floor(Math.random() * images.length);
         image.src = images[randomIndex];
-        notification.style.display = "block";
+        notification.style.opacity = 0;
+        notification.style.transform = "translateY(-60px)";
         setTimeout(function () {
-          notification.style.opacity = 1;
-          notification.style.transform = "translateY(0)";
-        }, 100);
+          notification.style.display = "block";
+          setTimeout(function () {
+            notification.style.opacity = 1;
+            notification.style.transform = "translateY(0)";
+          }, 100);
+        }, 10000);
+        setTimeout(function () {
+          notification.style.opacity = 0;
+          notification.style.transform = "translateY(-60px)";
+          setTimeout(function () {
+            notification.style.display = "none";
+          }, 500);
+          setTimeout(showNotification, 20000);
+        }, 15000);
         image.addEventListener("click", function () {
           notification.style.opacity = 0;
           notification.style.transform = "translateY(-60px)";
@@ -655,7 +667,7 @@
             showNotification();
           }
         }, 5000);
-      }, 25000);
+      }, 10000);
     });
 
     // нижний счетчик попап 
