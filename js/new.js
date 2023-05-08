@@ -82,6 +82,27 @@ window.addEventListener("DOMContentLoaded", () => {
     document.getElementById("comment-input").value = "";
   
   }
+  // назначаем обработчик событий для кнопки "Send"
+  var sendButton = document.querySelector('#comment-submit');
+  sendButton.onclick = function () {
+    var commentInput = document.getElementById("comment-input").value;
+    if (commentInput.trim() == "") {
+      var modal = document.getElementById("comment-modal");
+      modal.style.display = "block";
+      document.body.style.overflow = "hidden";
+      window.onclick = function (event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+          document.body.style.overflow = "";
+        } else if (event.target == clobtn) {
+          modal.style.display = "none";
+          document.body.style.overflow = "";
+        }
+      }
+    } else {
+      addComment();
+    }
+  }
   
   function likeComment(comment) {
     // получаем количество лайков для комментария
@@ -131,27 +152,7 @@ window.addEventListener("DOMContentLoaded", () => {
   observer.observe(document.body, config);
   
   
-  // назначаем обработчик событий для кнопки "Send"
-  var sendButton = document.querySelector("#comment-form button[type='submit']");
-  sendButton.onclick = function () {
-    var commentInput = document.getElementById("comment-input").value;
-    if (commentInput.trim() == "") {
-      var modal = document.getElementById("comment-modal");
-      modal.style.display = "block";
-      document.body.style.overflow = "hidden";
-      window.onclick = function (event) {
-        if (event.target == modal) {
-          modal.style.display = "none";
-          document.body.style.overflow = "";
-        } else if (event.target == clobtn) {
-          modal.style.display = "none";
-          document.body.style.overflow = "";
-        }
-      }
-    } else {
-      addComment();
-    }
-  };
+  
   // нижний счетчик попап 
   var element = document.getElementById("bottombar1");
   

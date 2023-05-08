@@ -60,68 +60,68 @@ formEmail.addEventListener("input", function () {
   }
 });
 
-const formPasswordArrayError = [
+// const formPasswordArrayError = [
 
-  `This field is required`,
+//   `This field is required`,
 
-  `Password must be more than 8 characters`,
+//   `Password must be more than 8 characters`,
 
-  `You can't use special characters (^@()_#*+/ \“?!=.{}~\`&) and spaces`,
+//   `You can't use special characters (^@()_#*+/ \“?!=.{}~\`&) and spaces`,
 
-  `Password must not be more than 12 characters`,
+//   `Password must not be more than 12 characters`,
 
-  `Small letters are obligatory`,
+//   `Small letters are obligatory`,
 
-  `Capital letters are mandatory`,
+//   `Capital letters are mandatory`,
 
-  `Numbers are mandatory`,
+//   `Numbers are mandatory`,
 
-  `The password must be in English only`,
+//   `The password must be in English only`,
 
-];
-formPassword.addEventListener("input", function () {
+// ];
+// formPassword.addEventListener("input", function () {
 
-  let minCharacters = 8;
+//   let minCharacters = 8;
 
-  let maxCharacters = 12;
+//   let maxCharacters = 12;
 
-  checkLengthRegx(formPassword, formPasswordArrayError, minCharacters, maxCharacters);
+//   checkLengthRegx(formPassword, formPasswordArrayError, minCharacters, maxCharacters);
 
-  if (/^[a-zA-Z0-9А-Яа-я]+$/.test(formPassword.value)) {
+//   if (/^[a-zA-Z0-9А-Яа-я]+$/.test(formPassword.value)) {
 
-    if (!formPassword.value.match(/[a-zа-я]+/)) {
+//     if (!formPassword.value.match(/[a-zа-я]+/)) {
 
-      addClassInvalid(formPassword);
+//       addClassInvalid(formPassword);
 
-      addErrorMessage(formPassword, formPasswordArrayError[4]);
+//       addErrorMessage(formPassword, formPasswordArrayError[4]);
 
-    }
+//     }
 
-    if (!formPassword.value.match(/[A-ZА-Я]+/)) {
+//     if (!formPassword.value.match(/[A-ZА-Я]+/)) {
 
-      addClassInvalid(formPassword);
+//       addClassInvalid(formPassword);
 
-      addErrorMessage(formPassword, formPasswordArrayError[5]);
+//       addErrorMessage(formPassword, formPasswordArrayError[5]);
 
-    }
+//     }
 
-    if (!formPassword.value.match(/[0-9]+/)) {
+//     if (!formPassword.value.match(/[0-9]+/)) {
 
-      addClassInvalid(formPassword);
+//       addClassInvalid(formPassword);
 
-      addErrorMessage(formPassword, formPasswordArrayError[6]);
+//       addErrorMessage(formPassword, formPasswordArrayError[6]);
 
-    }
+//     }
 
-  } else {
+//   } else {
 
-    addClassInvalid(formPassword);
+//     addClassInvalid(formPassword);
 
-    addErrorMessage(formPassword, formPasswordArrayError[7]);
+//     addErrorMessage(formPassword, formPasswordArrayError[7]);
 
-  }
+//   }
 
-});
+// });
 
 const formCountryArrayError = [`Please select your country`];
 
@@ -148,7 +148,7 @@ formPhone.addEventListener("input", function () {
 });
 
 // var format = /[ `!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
-function checkLengthRegx(input, arrayNumError, minCharacters, maxCharacters = 100) {
+function checkLengthRegx(input, arrayNumError, minCharacters, maxCharacters = 11) {
   if (input.value.length >= minCharacters) {
     // valid
     addClassValid(input);
@@ -241,7 +241,7 @@ form.addEventListener("submit", function (e) {
 async function formSend(form) {
   checkBlankField(formName, formNameArrayError[0]);
   checkBlankField(formSecondname, formSecondnameArrayError[0]);
-  checkBlankField(formPassword, formPasswordArrayError[0]);
+  // checkBlankField(formPassword, formPasswordArrayError[0]);
   checkBlankField(formPhone, formPhoneArrayError[0]);
   checkBlankField(formEmail, formEmailArrayError[0]);
   checkEmailInput(formEmail, formEmailArrayError[0]);
